@@ -10,10 +10,47 @@
 		<link rel='stylesheet' type='text/css' href='./css/styles.css' />
 	</head>
 	<body>
-		<div class='container'>
+		<div class='container text-center'>
 			<h1>{{pageTitle}}</h1>
-			<a href='/users'>Users</a>
-			<a href='/appointments'>Appointments</a>
+			<form
+				action='/login'
+				method='post'
+				class='container center-block text-center'
+			>
+				{{#if error}}
+					<div class='alert alert-danger col-4 container text-center'>
+						Invalid username or password.
+					</div>
+				{{/if}}
+
+				{{#if query.logout}}
+					<div class='alert alert-danger col-4 container text-center'>
+						You have been logged out.
+					</div>
+				{{/if}}
+
+				<div class='form-group col-4 container text-center'>
+					<label for='username'>Username</label>
+					<input
+						type='text'
+						class='form-control'
+						id='username'
+						name='username'
+						placeholder='Username'
+					/>
+				</div>
+				<div class='form-group col-4 container text-center'>
+					<label for='password'>Password</label>
+					<input
+						type='password'
+						class='form-control'
+						id='password'
+						name='password'
+						placeholder='Password'
+					/>
+				</div>
+				<button type='submit' class='btn btn-primary'>Login</button>
+			</form>
 		</div>
 	</body>
 </html>
