@@ -1,0 +1,40 @@
+h1 {
+	margin: 0.5em 0 0.5em 0;
+}
+#t1 tr:nth-child(odd) {
+	background-color: white;
+}
+#t1 tr:nth-child(even) {
+	background-color: #eaeaea;
+}
+
+.action-buttons {
+	margin-right: 1em;
+	border-top: none;
+}
+
+.info {
+	padding: 20px;
+	background-color: #50a6ff;
+	color: white;
+	margin-bottom: 15px;
+	width: 100%;
+	border-radius: 10px;
+}
+
+/* The close button */
+.closebtn {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+	color: black;
+}

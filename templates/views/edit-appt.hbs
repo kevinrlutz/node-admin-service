@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>{{pageTitle}}</title>
+		<link
+			rel='stylesheet'
+			href='https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css'
+			integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'
+			crossorigin='anonymous'
+		/>
+		<link rel='stylesheet' type='text/css' href='../.././css/styles.css' />
+	</head>
+	<body>
+		<div class='container'>
+			<h1>{{pageTitle}}</h1>
+
+			<form
+				action='/appointments/{{appt._id}}/edit'
+				method='POST'
+				enctype='multipart/form-data'
+			>
+				<label for='name'>Appointment Name</label>
+				<input
+					id='name'
+					name='name'
+					type='text'
+					value='{{appt.name}}'
+					placeholder='Name of the appointment.'
+					class='form-control mb-4 col-4'
+					required
+				/>
+
+				<label for='type'>Appointment Type</label>
+				<input
+					id='type'
+					name='type'
+					type='text'
+					value='{{appt.type}}'
+					class='form-control mb-4 col-4'
+					required
+				/>
+
+				<label for='desc'>Appointment Description</label>
+				<input
+					id='desc'
+					type='text'
+					name='description'
+					value='{{appt.description}}'
+					placeholder='Provide a brief description.'
+					class='form-control mb-4 col-4'
+				/>
+
+				<label for='start'>Start Date/Time</label>
+				<input
+					id='start'
+					type='datetime-local'
+					name='startTime'
+					value='{{appt.startTime}}'
+					class='form-control mb-4 col-4'
+					required
+				/>
+
+				<label for='end'>End Date/Time</label>
+				<input
+					id='end'
+					type='datetime-local'
+					name='endTime'
+					value='{{appt.endTime}}'
+					class='form-control mb-4 col-4'
+					required
+				/>
+
+				<label for='meta'>Metadata</label>
+				<input
+					id='meta'
+					name='metadata'
+					type='text'
+					value='{{appt.metadata}}'
+					placeholder='Provide any additional information.'
+					class='form-control mb-4 col-4'
+				/>
+
+				<button type='submit' class='btn btn-info col-2'>Save Changes</button>
+			</form>
+		</div>
+	</body>
+</html>
