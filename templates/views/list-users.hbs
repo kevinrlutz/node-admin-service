@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>{{pageTitle}}</title>
+		<link rel='stylesheet'
+			href='https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css'
+			integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'
+			crossorigin='anonymous'/>
+		<link rel='stylesheet' type='text/css' href='./css/styles.css' />
+	</head>
+	<body>
+		<div class='container'>
+			<h1>{{pageTitle}}</h1>
+			<br/>
+			<table class='table'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each userList}}
+						<tr>
+                            <td>{{this._id}}</td>
+                            <td>{{this.firstName}}</td>
+                            <td>{{this.lastName}}</td>
+                            <td>{{this.gender}}</td>
+                            <td>{{this.age}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.phoneNumber}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html> 

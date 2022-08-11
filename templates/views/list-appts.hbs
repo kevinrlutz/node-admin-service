@@ -5,14 +5,13 @@
 			rel='stylesheet'
 			href='https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css'
 			integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'
-			crossorigin='anonymous'
-		/>
+			crossorigin='anonymous'/>
 		<link rel='stylesheet' type='text/css' href='./css/styles.css' />
 	</head>
 	<body>
 		<div class='container'>
 			<h1>{{pageTitle}}</h1>
-			<br />
+			<br/>
 			<table id='t1' class='table'>
 				<thead>
 					<tr>
@@ -30,9 +29,7 @@
 					{{#each apptList}}
 						<tr>
 							<td><a href='#'>User</a></td>
-							<td><a
-									href='/appointments/{{this._id}}'
-								>{{this.name}}</a></td>
+							<td><a href='/appointments/{{this._id}}'>{{this.name}}</a></td>
 							<td>{{this.type}}</td>
 							<td>{{this.description}}</td>
 							<td>{{dateFormat
@@ -49,22 +46,18 @@
 									<form
 										action='/appointments/{{this._id}}/delete'
 										method='POST'
-										onsubmit='setTimeout(function(){window.location.reload();},800);'
-									>
+										onsubmit='setTimeout(function(){window.location.reload();},800);'>
 										<button
 											type='submit'
 											onclick="return confirm('Are you sure you want to delete this appointment?')"
-											class='btn btn-danger action-buttons'
-										>
+											class='btn btn-danger action-buttons'>
 											Delete</button>
 									</form>
 									<form
-										action='/appointments/{{this._id}}/edit'
-									>
+										action='/appointments/{{this._id}}/edit'>
 										<button
 											type='submit'
-											class='btn btn-primary action-buttons'
-										>Edit</button>
+											class='btn btn-primary action-buttons'>Edit</button>
 									</form>
 								</div>
 							</td>
@@ -75,8 +68,7 @@
 			<div class='info'>
 				<span
 					class='closebtn'
-					onclick="this.parentElement.style.display='none';"
-				>&times;</span>
+					onclick="this.parentElement.style.display='none';">&times;</span>
 				Info! Visit the individual user page to make an appointment for
 				that user.
 			</div>

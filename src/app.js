@@ -77,6 +77,20 @@ app.get('/home', (req, res) => {
 	})
 })
 
+app.get('/users', async (req, res) => {
+	if (!jwtVerify(req.cookies)) {
+		return res.redirect('/')
+	}
+
+	request(process.env.USER_SERVICE_URL, { json: true }, (error, response, body) => {
+		res.render('list-users', {
+			pageTitle: 'User List',
+			userList: body,
+		})
+	})
+
+})
+
 app.get('/appointments', (req, res) => {
 	if (!jwtVerify(req.cookies)) {
 		return res.redirect('/')
