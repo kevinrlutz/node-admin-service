@@ -28,10 +28,10 @@ app.use(cookieParser())
 app.use(express.static(publicDirPath))
 
 const jwtVerify = (cookies) => {
-	if (cookies.JWT === undefined) {
+	if (cookies.JWT === undefined || cookies.JWT === '') {
 		return false
 	}
-	return true
+	return jwt.verify(cookies.JWT, process.env.JWT_SECRET)
 }
 
 app.get('/', (req, res) => {
@@ -65,6 +65,11 @@ app.post('/login', async (req, res) => {
 
 	res.cookie('JWT', token, { maxAge: 600000 })
 	res.redirect('/home')
+})
+
+app.post('/logout', async (req, res) => {
+	res.cookie('JWT', '', { maxAge: 1 })
+	res.redirect('/')
 })
 
 app.get('/home', (req, res) => {
