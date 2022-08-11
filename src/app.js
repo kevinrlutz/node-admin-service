@@ -91,6 +91,29 @@ app.get('/users', async (req, res) => {
 
 })
 
+app.get('/users/create', async (req, res) => {
+	if (!jwtVerify(req.cookies)) {
+		return res.redirect('/')
+	}
+
+	res.render('create-user', {
+		pageTitle: 'Create User'
+	})
+})
+
+app.post('/users/create', (req, res) => {
+	request.post(process.env.USER_SERVICE_URL, {
+		body: req.fields,
+		json: true,
+	})
+
+	res.redirect('/users')
+})
+
+app.post('/users/:userId/delete', (req, res) => {
+	request.delete(process.env.USER_SERVICE_URL + '/' + req.params.userId)
+})
+
 app.get('/appointments', (req, res) => {
 	if (!jwtVerify(req.cookies)) {
 		return res.redirect('/')
