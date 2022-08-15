@@ -10,10 +10,39 @@
 		<link rel='stylesheet' type='text/css' href='./css/styles.css' />
 	</head>
 	<body>
-		<div class='container'>
+		<div class='container text-center'>
 			<h1>{{pageTitle}}</h1>
-			<a href='/users'>Users</a>
-			<a href='/appointments'>Appointments</a>
+			<div class='grid'>
+				<div class='row'>
+					<div class='col-6 container text-center'>
+						<a href='/users'>
+							<img src='./images/user.png' class='col-4' /><br />
+							<h2>Users</h2>
+						</a>
+					</div>
+					<div class='col-6 container text-center'>
+						<a href='/appointments'>
+							<img
+								src='./images/appointment.png'
+								class='col-4'
+							/><br />
+							<h2>Appointments</h2>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class='container text-center mt-5'>
+				<form action='/logout' method='post'>
+					<button type='submit' class='btn btn-danger'>Logout</button>
+				</form>
+			</div>
+			<br />
+			<footer class='mt-5 text-center'>
+				<p>Developed by Kevin Lutz and Rayaan Attari</p>
+				<a href='http://www.perficient.com' target='_blank'>
+					<img src='./images/prft-logo.png' class='col-2' />
+				</a>
+			</footer>
 		</div>
 	</body>
 </html>
