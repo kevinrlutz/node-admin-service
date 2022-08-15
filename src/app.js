@@ -110,6 +110,23 @@ app.post('/users/create', (req, res) => {
 	res.redirect('/users')
 })
 
+app.get('/users/:userId', async (req, res) => {
+	if (!jwtVerify(req.cookies)) {
+		return res.redirect('/')
+	}
+
+	request(
+		process.env.USER_SERVICE_URL + '/' + req.params.userId,
+		{ json: true },
+		(error, response, body) => {
+			res.render('user', {
+				pageTitle: 'User Info',
+				appt: body,
+			})
+		}
+	)
+})
+
 app.post('/users/:userId/delete', (req, res) => {
 	request.delete(process.env.USER_SERVICE_URL + '/' + req.params.userId)
 })
