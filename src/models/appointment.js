@@ -20,13 +20,13 @@ const apptSchema = new mongoose.Schema({
 	startTime: {
 		type: String,
 		required: false,
-		default: new Date().toISOString(),
+		default: new Date().toISOString().substring(0, 16),
 		trim: true,
 	},
 	endTime: {
 		type: String,
 		required: false,
-		default: new Date().toISOString(),
+		default: new Date().toISOString().substring(0, 16),
 		trim: true,
 	},
 	metadata: {

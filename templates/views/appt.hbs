@@ -7,7 +7,7 @@
 			integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'
 			crossorigin='anonymous'
 		/>
-		<link rel='stylesheet' type='text/css' href='.././css/styles.css' />
+		<link rel='stylesheet' type='text/css' href='/css/styles.css' />
 	</head>
 	<body>
 		<div class='container'>
@@ -28,7 +28,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>{{appt.userId}}</td>
+						<td><a href='/users/{{appt.userId}}'>User</a></td>
 						<td>{{appt.name}}</td>
 						<td>{{appt.type}}</td>
 						<td>{{appt.description}}</td>
@@ -66,7 +66,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<a href='/appointments'>Back to Appointment List</a>
+			<a href='javascript:history.back()'>Go Back</a>
 		</div>
 	</body>
 </html>
