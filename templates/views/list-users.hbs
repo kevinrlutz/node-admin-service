@@ -1,79 +1,81 @@
 <html>
-  <head>
-    <title>{{pageTitle}}</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>{{pageTitle}}</h1>
-      <br />
-      <table class="table">
-        <thead>
-          <tr>
-            <th>User Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Gender</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each userList}}
-            <tr>
-              <td><a href="/users/{{this._id}}">{{this._id}}</a></td>
-              <td>{{this.firstName}}</td>
-              <td>{{this.lastName}}</td>
-              <td>{{this.gender}}</td>
-              <td>{{this.age}}</td>
-              <td>{{this.email}}</td>
-              <td>{{this.phoneNumber}}</td>
-              <td>
-                <div class="btn-group">
+	<head>
+		<title>{{pageTitle}}</title>
+		<link
+			rel='stylesheet'
+			href='https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css'
+			integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'
+			crossorigin='anonymous'
+		/>
+		<link rel='stylesheet' type='text/css' href='/css/styles.css' />
+	</head>
+	<body>
+		<div class='container'>
+			<h1>{{pageTitle}}</h1>
+			<br />
+			<table class='table' id='t1'>
+				<thead>
+					<tr>
+						<th>User Id</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Gender</th>
+						<th>Age</th>
+						<th>Email</th>
+						<th>Phone Number</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each userList}}
+						<tr>
+							<td><a
+									href='/users/{{this._id}}'
+								>{{this._id}}</a></td>
+							<td>{{this.firstName}}</td>
+							<td>{{this.lastName}}</td>
+							<td>{{this.gender}}</td>
+							<td>{{this.age}}</td>
+							<td>{{this.email}}</td>
+							<td>{{this.phoneNumber}}</td>
+							<td>
+								<div class='btn-group'>
 
-                  <form
-                    action="/users/{{this._id}}/delete"
-                    method="POST"
-                    onsubmit="setTimeout(function(){window.location.reload();},800);"
-                  >
-                    <button
-                      type="submit"
-                      onclick="return confirm('Are you sure you want to delete this user and all associated appointments?')"
-                      class="btn btn-danger action-buttons"
-                    >
-                      Delete</button>
-                  </form>
-                  <form action="/users/{{this._id}}/edit">
-                    <button
-                      type="submit"
-                      class="btn btn-primary action-buttons"
-                    >Edit
-                    </button>
-                  </form>
-                </div>
-              </td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
+									<form
+										action='/users/{{this._id}}/delete'
+										method='POST'
+										onsubmit='setTimeout(function(){window.location.reload();},800);'
+									>
+										<button
+											type='submit'
+											onclick="return confirm('Are you sure you want to delete this user and all associated appointments?')"
+											class='btn btn-danger action-buttons'
+										>
+											Delete</button>
+									</form>
+									<form action='/users/{{this._id}}/edit'>
+										<button
+											type='submit'
+											class='btn btn-primary action-buttons'
+										>Edit
+										</button>
+									</form>
+								</div>
+							</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
 
-      <form class="center-block text-center">
-        <input
-          type="button"
-          value="Add New User"
-          onclick="window.location.href='/users/create'"
-          class="btn btn-info"
-        />
-      </form>
-      <a href="/home">Back to Home</a>
-    </div>
-  </body>
+			<form class='center-block text-center'>
+				<input
+					type='button'
+					value='Add New User'
+					onclick="window.location.href='/users/create'"
+					class='btn btn-info'
+				/>
+			</form>
+			<a href='/home'>Back to Home</a>
+		</div>
+	</body>
 </html>
