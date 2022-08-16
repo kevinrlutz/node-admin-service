@@ -18,7 +18,8 @@
 		"hbs": "^4.2.0",
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^6.5.2",
-		"postman-request": "^2.88.1-postman.31"
+		"postman-request": "^2.88.1-postman.31",
+		"validator": "^13.7.0"
 	},
 	"devDependencies": {
 		"env-cmd": "^10.1.0",
