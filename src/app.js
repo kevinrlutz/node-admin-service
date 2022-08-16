@@ -174,6 +174,34 @@ app.post('/users/:userId/edit', (req, res) => {
 	res.redirect('/users')
 })
 
+app.post('/users/searchByLastName', (req, res) => {
+	const lastName = req.fields.lastName
+
+	request(
+		process.env.USER_SERVICE_URL + '/searchByLastName/' + encodeURIComponent(lastName),
+		{ json: true },
+		(error, response, body) => {
+			res.render('list-users', {
+				pageTitle: 'User List',
+				userList: body,
+			})
+		})
+})
+
+app.post('/users/searchByEmail', (req, res) => {
+	const email = req.fields.email
+	
+	request(
+		process.env.USER_SERVICE_URL + '/searchByEmail/' + encodeURIComponent(email),
+		{ json: true },
+		(error, response, body) => {
+			res.render('list-users', {
+				pageTitle: 'User List',
+				userList: body,
+			})
+		})
+})
+
 app.post('/users/:userId/delete', (req, res) => {
 	request.delete(process.env.USER_SERVICE_URL + '/' + req.params.userId)
 })
