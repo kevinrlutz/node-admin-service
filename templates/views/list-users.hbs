@@ -12,14 +12,15 @@
 	<body>
 		<div class='container'>
 				<h1>{{pageTitle}}</h1>
-					<form action='/users/searchByLastName/' method='POST'>
+				<div class="row">
+					<form action='/users/searchByLastName/' method='POST' class="mr-4 col-4">
 						<div class='form-group'>
 							<label for='search'>Search by Last Name</label>
 							<input
 						type='text'
 						id='search'
 						name='lastName'
-						class='form-control col-4'
+						class='form-control col-9'
 						placeholder='Search (Last Name)'
 						required
 							/>
@@ -34,14 +35,14 @@
 						</div>
 					</form>
 
-					<form action='/users/searchByEmail/' method='POST'>
+					<form action='/users/searchByEmail/' method='POST' class="col-4">
 						<div class='form-group'>
 							<label for='search'>Search by Email</label>
 								<input
 									type='text'
 									id='search'
 									name='email'
-									class='form-control col-4'
+									class='form-control col-9'
 									placeholder='Search (Email)'
 									required
 								/>
@@ -55,6 +56,7 @@
 							All</a>
 						</div>
 					</form>
+				</div>
 			<br />
 			<table class='table' id='t1'>
 				<thead>
