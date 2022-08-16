@@ -37,20 +37,20 @@
                 />
 
                 <label for='gender'>Gender</label>
-                <input
-					id='gender'
-					name='gender'
-					type='text'
-					placeholder="Gender"
-					class='form-control mb-4 col-4'
-					required
-                />
+				<br>
+				<select name='gender' id='gender'>
+					<option value="Male">MALE</option>
+					<option value="Female">FEMALE</option>
+					<option value="Other">OTHER</option>
+				</select>
+				<br>
+				<br>
 
                 <label for='age'>Age</label>
                 <input
 					id='age'
 					name='age'
-					type='text'
+					type='number'
 					placeholder="Age"
 					class='form-control mb-4 col-4'
 					required
@@ -60,7 +60,7 @@
                 <input
 					id='email'
 					name='email'
-					type='text'
+					type='email'
 					placeholder="Email"
 					class='form-control mb-4 col-4'
 					required
@@ -70,7 +70,8 @@
                 <input
 					id='phoneNumber'
 					name='phoneNumber'
-					type='text'
+					type='tel'
+					pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 					placeholder="Phone Number"
 					class='form-control mb-4 col-4'
 					required
