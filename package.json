@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "env-cmd -f ./config/dev.env nodemon -e js,hbs src/app.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "env-cmd -f ./config/dev.env node -e js,hbs src/app.js"
+		"start": "node src/app.js"
 	},
 	"author": "",
 	"license": "ISC",
