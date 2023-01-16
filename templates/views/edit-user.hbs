@@ -74,11 +74,13 @@
 				/>
 
 				<label for='phoneNumber'>Phone Number</label>
+				<small>Format: ###-###-####</small>
 				<input
 					id='phoneNumber'
 					name='phoneNumber'
 					type='text'
 					value='{{user.phoneNumber}}'
+					pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
 					placeholder='Phone Number'
 					class='form-control mb-4 col-4'
 					required
